@@ -1,0 +1,178 @@
+{% load static i18n %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}StoryMMOde{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StoryMMOde Manager">
+    <meta name="author" content="Jothan Kelepolo">
+
+    <link rel="icon" href="{% static 'images/favicons/icon.png' %}">
+
+    {% block css %}
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Your stuff: Third-party CSS libraries go here -->
+
+    <!-- This file stores project-specific CSS -->
+    <style>
+      /* Color variables */
+      :root {
+        --primary-color: {{ primary_color }};
+        --secondary-color: {{ secondary_color }};
+        --accent-color: {{ accent_color }};
+        --success-color: {{ success_color }};
+        --info-color: {{ info_color }};
+        --warning-color: {{ warning_color }};
+        --danger-color: {{ danger_color }};
+        --background-color: {{ background_color }};
+        --text-color: {{ text_color }};
+        --primary-hover-color: {{ primary_hover_color }};
+        --secondary-hover-color: {{ secondary_hover_color }};
+        --accent-hover-color: {{ accent_hover_color }};
+        --success-hover-color: {{ success_hover_color }};
+        --info-hover-color: {{ info_hover_color }};
+        --warning-hover-color: {{ warning_hover_color }};
+        --danger-hover-color: {{ danger_hover_color }};
+    }
+
+    </style>
+    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    
+
+    {% endblock %}
+    <!-- Le javascript
+    ================================================== -->
+    {# Placed at the top of the document so pages load faster with defer #}
+    {% block javascript %}
+      <!-- Popper -->
+      <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+      <!-- Bootstrap JS -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <!-- Your stuff: Third-party javascript libraries go here -->
+
+      <!-- place project specific Javascript in this file -->
+      <script defer src="{% static 'js/project.js' %}"></script>
+
+    {% endblock javascript %}
+
+    {% block javascript_extended %}
+    {% endblock javascript_extended %}
+  </head>
+
+  <body>
+
+    {% block navbar %}
+      <div class="mb-1" style="position:sticky; position:-webkit-sticky; top:0; z-index: 1000;">
+        <nav class="navbar navbar-expand-md navbar-dark">
+          <div class="container-fluid">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div>
+              <a href="{% url 'home' %}">
+                <image src="{% static 'images/favicons/icon.png' %}" width="40px" height="40px"></image>
+              </a>
+    
+              <a class="navbar-brand" href="{% url 'home' %}">StoryMMOde</a>
+            </div>
+
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link d-flex align-items-center" href="{% url 'home' %}"> 
+                    <i class="lni lni-home me-1"></i> Home </a>
+                </li>
+                 {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center"
+                   href="{% url 'users:detail' request.user.username %}"> <i class="lni lni-user me-1"></i> {% translate "Profile" %}</a>
+              </li>
+              <li class="nav-item">
+                {# URL provided by django-allauth/account/urls.py #}
+                <a class="nav-link d-flex align-items-center" href="{% url 'account_logout' %}"> <i class="lni lni-shift-right me-1"></i> {% translate "Sign Out" %}</a>
+              </li>
+            {% else %}
+              {% if ACCOUNT_ALLOW_REGISTRATION %}
+                <li class="nav-item">
+                  {# URL provided by django-allauth/account/urls.py #}
+                  <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% translate "Sign Up" %}</a>
+                </li>
+              {% endif %}
+              <li class="nav-item">
+                {# URL provided by django-allauth/account/urls.py #}
+                <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% translate "Sign In" %}</a>
+              </li>
+            {% endif %}
+              </ul>
+              
+            </div>
+          </div>
+        </nav>
+      </div>
+    {% endblock navbar %}
+
+    <div class="container d-flex flex-column flex-grow-1">
+
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      {% block breadcrumbs %}
+      {% endblock breadcrumbs %}
+
+      {% block content %}
+
+        <p>Use this document as a way to quick start any new project.</p>
+      {% endblock content %}
+
+    </div> <!-- /container -->
+
+    <div id="modal_container">
+    {% block modal %}{% endblock modal %}
+    </div>
+
+
+    {% block inline_javascript %}
+    {% comment %}
+    Script tags with only code, no src (defer by default). To run
+    with a "defer" so that you run inline code:
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {/* Run whatever you want */});
+    </script>
+    {% endcomment %}
+    {% endblock inline_javascript %}
+    <div class="loader-container" hidden>
+      <div class="loader">
+      </div>
+    </div>
+
+
+
+    {% block footer %}
+    <footer class="text-center text-xs-start position-relative mt-4">
+      <!-- Copyright -->
+      <div class="text-center" style="z-index: 1;">
+        © 2024 Kelepolo, LLC -
+        <a href="https://www.StoryMMOde.ai/">StoryMMOde.ai</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    {% endblock footer %}
+    
+
+  </body>
+</html>

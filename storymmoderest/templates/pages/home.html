@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron text-center bg-primary text-white">
+        <h1 class="display-4">Welcome to StoryMMOde!</h1>
+        <p class="lead">Embark on a narrative adventure tailored just for you.</p>
+    </div>
+    
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/scenes/hero_banner.png' %}" class="img-fluid border border-primary border-2" alt="StoryMMode Hero" />
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/scenes/wanderer_banner.png' %}" class="img-fluid border border-primary border-2" alt="StoryMMode Hero" />
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/scenes/space_banner.png' %}" class="img-fluid border border-primary border-2" alt="StoryMMode Hero" />
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/scenes/steam_banner.png' %}" class="img-fluid border border-primary border-2" alt="StoryMMode Hero" />
+          </div>
+        </div>
+      </div>
+
+    <div class="row">
+        <div class="col-md-4 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Choose Your Adventure</h5>
+                    <p class="card-text">From mystical lands to futuristic dystopias, select the setting that calls to you.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Shape Your Destiny</h5>
+                    <p class="card-text">Your decisions carve the path forward, shaping characters and outcomes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Discover and Earn</h5>
+                    <p class="card-text">Unveil secrets, acquire items, interact with others, and progress in a world that grows with you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <!-- <a href="https://chat.openai.com/g/g-ueG7D455I-storymmode" target="_blank" class="btn btn-lg btn-success">Start Your Journey</a> -->
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'users:player' %}" class="btn btn-lg btn-success">Continue Your Journey</a>
+        {% else %}
+        <a href="{% url 'account_signup' %}" class="btn btn-lg btn-success">Start Your Journey</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

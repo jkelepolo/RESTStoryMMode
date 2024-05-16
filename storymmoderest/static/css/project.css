@@ -1,0 +1,1038 @@
+/* Background colors */
+body {
+  background-color: var(--background-color); /* Use background color variable */
+}
+
+/* Text colors */
+* {
+  color: var(--text-color); /* Use text color variable */
+}
+
+  /* Add these lines in your existing <style> block */
+  .navbar {
+    padding: 0.5rem 1rem; /* Adjust as needed */
+  }
+  
+  .navbar-brand {
+    font-size: 1.7rem !important; /* Adjust as needed */
+  }
+
+  .nav-link {
+    font-size: 1rem; /* Adjust as needed */
+  }
+
+.table-fixed {
+  table-layout: fixed;
+  width: 250px;
+}
+
+
+.navbar-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+input, textarea, select {
+  color: var(--text-color) !important; /* Use text color variable */
+  background-color: var(--background-color) !important; /* Use background color variable */
+  border-color: var(--primary-color) !important; /* Use primary color variable for border color */
+}
+
+input:focus, textarea:focus {
+  outline: none !important; /* Remove the default focus outline */
+  border-color: var(--primary-color) !important; /* Use primary color variable for border color */
+}
+
+/* Colored text */
+.text-primary {
+  color: var(--primary-color) !important; /* Use primary color variable */
+}
+
+.text-secondary {
+  color: var(--secondary-color) !important; /* Use secondary color variable */
+}
+
+.text-accent {
+  color: var(--accent-color) !important; /* Use accent color variable */
+}
+
+.text-success {
+  color: var(--success-color) !important; /* Use success color variable */
+}
+
+.text-info {
+  color: var(--info-color) !important; /* Use info color variable */
+}
+
+.text-warning {
+  color: var(--warning-color) !important; /* Use warning color variable */
+}
+
+.text-danger {
+  color: var(--danger-color) !important; /* Use danger color variable */
+}
+
+.text-gold-shimmer {
+  color: #b69d12 !important; /* Gold color */
+  background: linear-gradient(45deg, #b69d12, #fdebaf, #b69d12);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: shimmer 3s infinite linear;
+}
+
+.text-fire-shimmer {
+  color: #ff0000 !important; /* Fire color */
+  background: linear-gradient(90deg, #ff0000, #e0a265, #ff0000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: shimmer 2s infinite linear;
+}
+
+.text-forest-shimmer {
+  color: #228b22 !important; /* Forest color */
+  background: linear-gradient(45deg, #228b22, #acf5ac, #228b22);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: shimmer 2s infinite linear;
+
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
+
+.text-white {
+  color: white !important; /* Use white text color */
+}
+
+.text-fade {
+  opacity: 65%;
+}
+
+/* Styling Select Boxes */
+
+select {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 2px solid var(--primary-color);
+  padding: 5px;
+  border-radius: 5px;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+select:focus {
+  border-color: var(--primary-hover-color);
+}
+
+select option {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+select option:hover, select option:focus, select option:active {
+  color: var(--background-color);
+  background-color: var(--primary-color);
+}
+
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color); /* Use primary color variable for navbar background */
+  color: white; /* White text color */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+.btn {
+  margin-inline-end:5px;
+  margin-top: 5px;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--primary-color); /* Use primary color variable for links */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
+  color: var(--primary-hover-color);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary-color); /* Use primary color variable for primary buttons */
+  color: white; /* White text color for primary buttons */
+  border: none; /* Remove border on buttons */
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover-color); /* Darker shade on primary button hover */
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color); /* Use secondary color variable for secondary buttons */
+  color: white; /* White text color for secondary buttons */
+  border: none; /* Remove border on buttons */
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-hover-color); /* Darker shade on secondary button hover */
+}
+
+.btn-accent {
+  background-color: var(--accent-color); /* Use accent color variable for accent buttons */
+  color: white; /* White text color for accent buttons */
+  border: none; /* Remove border on buttons */
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-hover-color); /* Darker shade on accent button hover */
+}
+
+.btn-success {
+  background-color: var(--success-color); /* Use success color variable for success buttons */
+  color: white; /* White text color for success buttons */
+  border: none; /* Remove border on buttons */
+}
+
+.btn-success:hover {
+  background-color: var(--success-hover-color); /* Darker shade on success button hover */
+}
+
+.btn-info {
+  background-color: var(--info-color); /* Use info color variable for info buttons */
+  color: white; /* White text color for info buttons */
+  border: none; /* Remove border on buttons */
+}
+
+.btn-info:hover {
+  background-color: var(--info-hover-color); /* Darker shade on info button hover */
+}
+
+.btn-warning {
+  background-color: var(--warning-color); /* Use warning color variable for warning buttons */
+  color: white; /* White text color for warning buttons */
+  border: none; /* Remove border on buttons */
+}
+
+.btn-warning:hover {
+  background-color: var(--warning-hover-color); /* Darker shade on warning button hover */
+}
+
+.btn-danger {
+  background-color: var(--danger-color); /* Use danger color variable for danger buttons */
+  color: white; /* White text color for danger buttons */
+  border: none; /* Remove border on buttons */
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover-color); /* Darker shade on danger button hover */
+}
+
+/* Alerts */
+.alert-debug {
+  color: var(--text-color); /* Use text color variable */
+  background-color: white;
+  border-color: #d6e9c6;
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+
+/* Checkbox Container Style */
+p > input[type="checkbox"], .form-check .form-check-input {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid var(--secondary-color);
+  background-color: var(--background-color);
+  outline: none;
+  cursor: pointer;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Checkbox Indicator Style */
+p > input[type="checkbox"]::before, .form-check .form-check-input::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background-color: var(--background-color);
+  position: relative;
+  bottom: 5px;
+  left: 1px;
+  transform-origin: center;
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Checked Checkbox Indicator Style */
+p > input[type="checkbox"]:checked::before, .form-check .form-check-input:checked::before {
+  background-color: var(--accent-color);
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Checkbox Indicator Grow Animation */
+p > input[type="checkbox"]:checked ~ label::before, .form-check .form-check-input:checked ~ label::before {
+  animation: checkbox-indicator-grow 0.3s ease-in-out forwards;
+}
+
+/* Checkbox Indicator Shrink Animation */
+p > input[type="checkbox"] ~ label::before, .form-check .form-check-input ~ label::before {
+  animation: checkbox-indicator-shrink 0.3s ease-in-out forwards;
+}
+
+/* Label Style */
+p > label {
+  color: var(--text-color);
+  vertical-align: middle;
+}
+
+/* Checkbox Indicator Grow Keyframes */
+@keyframes checkbox-indicator-grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Radio Button Container Style */
+p > input[type="radio"], .form-check .form-check-input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%; /* make it circular */
+  border: 2px solid var(--secondary-color);
+  background-color: var(--background-color);
+  outline: none;
+  cursor: pointer;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Radio Button Indicator Style */
+p > input[type="radio"]::before, .form-check .form-check-input[type="radio"]::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%; /* make it circular */
+  background-color: var(--background-color);
+  position: relative;
+  bottom: 5px;
+  left: 1px;
+  transform-origin: center;
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Checked Radio Button Indicator Style */
+p > input[type="radio"]:checked::before, .form-check .form-check-input[type="radio"]:checked::before {
+  background-color: var(--accent-color);
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Radio Button Indicator Grow Animation */
+p > input[type="radio"]:checked ~ label::before, .form-check .form-check-input[type="radio"]:checked ~ label::before {
+  animation: radio-button-indicator-grow 0.3s ease-in-out forwards;
+}
+
+/* Radio Button Indicator Shrink Animation */
+p > input[type="radio"] ~ label::before, .form-check .form-check-input[type="radio"] ~ label::before {
+  animation: radio-button-indicator-shrink 0.3s ease-in-out forwards;
+}
+
+/* Label Style - this can be same as it's common for both radio buttons and checkboxes */
+p > label {
+  color: var(--text-color);
+  vertical-align: middle;
+}
+
+/* Radio Button Indicator Grow Keyframes - this can be same as checkboxes if you want the same animation */
+@keyframes radio-button-indicator-grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.card-img-3d {
+  transition: transform 0.3s ease-out; /* Adjust duration and easing as needed */
+}
+
+.card-header {
+  background-color: var(--primary-color);
+}
+.card-header > * {
+  color: white;
+}
+
+.module-card, .card {
+  border-color: var(--secondary-color);
+  color: var(--text-color);
+  background-color: var(--background-color); /* Use your desired background color */
+  box-shadow: 0 0 10px var(--secondary-hover-color);
+}
+
+
+.accent-card {
+  border-color: var(--accent-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px var(--accent-hover-color);
+}
+
+.accent-card-header {
+  background-color: var(--accent-color);
+}
+
+.accent-card-header > * {
+  color: white;
+}
+
+
+.success-card {
+  border-color: var(--success-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px var(--success-hover-color);
+}
+
+.success-card-header {
+  background-color: var(--success-color);
+}
+
+.success-card-header > * {
+  color: white;
+}
+
+.info-card {
+  border-color: var(--info-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px var(--info-hover-color);
+}
+
+.info-card-header {
+  background-color: var(--info-color);
+}
+
+.info-card-header > * {
+  color: white;
+}
+
+.warning-card {
+  border-color: var(--warning-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px var(--warning-hover-color);
+}
+
+.warning-card-header {
+  background-color: var(--warning-color);
+}
+
+.warning-card-header > * {
+  color: white;
+}
+
+.danger-card {
+  border-color: var(--danger-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  box-shadow: 0 0 10px var(--danger-hover-color);
+}
+
+.danger-card-header {
+  background-color: var(--danger-color);
+}
+
+.danger-card-header > * {
+  color: white;
+}
+
+.stats-icons {
+  position: absolute;
+  top: 1rem; /* Adjust as needed */
+  left: 0; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  background-color: #000; /* Your choice of color */
+  border-radius: 0 20px 20px 0; /* Rounded on the right side */
+  overflow: hidden;
+  transition: width 0.3s ease; /* Smooth transition for width */
+  width: fit-content; /* Ensures the container starts as small as its content */
+}
+
+.icon-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; /* Ensures icon stays above the expanding background */
+}
+
+.stat-info {
+  white-space: nowrap;
+  font-size: larger;
+  font-weight: bold;
+  color: white;
+  padding-left: 5px; /* Space between icon and text */
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease; /* Smooth transitions for opacity and width */
+  z-index: 1; /* Behind the icon */
+  flex-grow: 0; /* Prevents the text from expanding the container initially */
+  width: 0; /* Initially hide the text */
+  overflow: hidden; /* Prevents text from spilling out when width is 0 */
+}
+
+.stat-icon:hover .stat-info {
+  opacity: 1;
+  width: auto; /* Allows the text to define its own width */
+  flex-grow: 1; /* Allows the container to grow */
+}
+
+.level-badge {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0.4rem;
+  background-color: #000;
+  border-radius: 20px;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.level-badge label {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .stats-icons {
+      top: 0.75rem;
+      left: 0;
+  }
+
+  .stat-icon {
+      border-radius: 0 18px 18px 0; /* Adjusted border-radius */
+      font-size: medium; /* Adjusted font size */
+  }
+
+  .icon-content img {
+      width: 2.5rem; /* Adjusted icon size */
+      height: 2.5rem; /* Adjusted icon size */
+  }
+
+  .stat-info {
+      font-size: 20px; /* Adjusted font size */
+      padding-left: 4px; /* Adjusted padding */
+  }
+
+  .level-badge {
+      margin: 0.3rem;
+      border-radius: 18px; /* Adjusted border-radius */
+  }
+
+  .level-badge label {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  .stats-icons {
+      top: 0.5rem;
+      left: 0;
+  }
+
+  .stat-icon {
+      border-radius: 0 15px 15px 0; /* Slightly smaller border-radius */
+      font-size: smaller; /* Smaller font size */
+  }
+
+  .icon-content img {
+    width: 2.5rem; /* Adjusted icon size */
+    height: 2.5rem; /* Adjusted icon size */
+}
+
+  .stat-info {
+      font-size: 18px; /* Smaller font size */
+      padding-left: 3px; /* Reduced padding */
+  }
+
+  .level-badge {
+      margin: 0.2rem;
+      border-radius: 15px; /* Slightly smaller border-radius */
+  }
+  
+  .level-badge label {
+    font-size: 1.5rem; /* Adjusted font size */
+  }
+}
+
+.badge {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.badge-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.badge-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* Checkbox Indicator Shrink Keyframes */
+@keyframes checkbox-indicator-shrink {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+  /* Accordion styling */
+  .accordion-item {
+    background-color: var(--background-color);
+    border-color: var(--secondary-color);
+    margin-bottom: 10px;
+  }
+
+  .accordion-button, .accordion-button:not(.collapsed) {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+  }
+
+  .accordion-button:hover {
+    background-color: var(--secondary-hover-color);
+  }
+
+  .accordion-button.collapsed {
+    background-color: var(--secondary-color);
+  }
+
+  .accordion-body {
+    background-color: var(--background-color);
+    border-color: var(--secondary-color);
+    color: var(--text-color);
+  }
+
+    /* Overwrite Bootstrap horizontal rule styles */
+
+  /* Default <hr> element */
+  hr {
+    border: none;
+    border-top: 2px solid var(--primary-color) !important;
+    margin: 20px 0;
+  }
+
+  /* <hr> element inside <div> with class "text-success" */
+  .text-success hr {
+    border-color: var(--success-color) !important;
+  }
+
+  /* <hr> element with class "border-danger" */
+  .border-danger {
+    border-color: var(--danger-color) !important;
+  }
+
+  /* <hr> element with class "border-secondary" */
+  .border-secondary {
+    border-color: var(--danger-secondary) !important;
+  }
+
+  /* <hr> element with class "border-primary" */
+  .border-primary {
+    border-color: var(--primary-color) !important;
+  }
+
+  /* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-hover-color);
+}
+
+/* Input Range */
+input[type="range"] {
+  -webkit-appearance: none; /* Override default CSS by all browsers */
+  width: 100%;
+  margin: 15px 0;
+}
+
+/* Track */
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: var(--secondary-color);
+  border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: var(--secondary-color);
+  border-radius: 5px;
+}
+
+/* Thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look by browsers */
+  height: 16px;
+  width: 16px;
+  background: var(--primary-color);
+  cursor: pointer;
+  border-radius: 50%; 
+  transition: background .15s ease-in-out;
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  background: var(--primary-color);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background .15s ease-in-out;
+}
+
+/* Hover and Active states */
+input[type="range"]:hover::-webkit-slider-thumb {
+  background: var(--primary-hover-color);
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+  background: var(--primary-hover-color);
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  background: var(--primary-hover-color);
+}
+
+input[type="range"]:active::-moz-range-thumb {
+  background: var(--primary-hover-color);
+}
+
+
+.change-block {
+  border: 1px solid var(--secondary-color);
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.change-block h6 {
+  margin: 0;
+}
+.added {
+  background-color: var(--success-color);
+}
+.removed {
+  background-color: var(--danger-color);
+}
+.changed {
+  background-color: var(--warning-color);
+}
+.difference-title {
+  margin-bottom: 10px;
+  background-color: var(--info-color);
+}
+
+/* Modal */
+
+.modal-content {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.modal-header {
+  border-bottom-color: var(--secondary-color);
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.modal-title {
+  color: white;
+}
+
+.modal-footer {
+  border-top-color: var(--secondary-color);
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Modal Close Button */
+.modal-header .btn-close {
+  color: white;
+}
+
+.modal-header .btn-close:hover {
+  color: var(--primary-hover-color);
+}
+
+/* Modal Buttons */
+.modal-footer .btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: var(--primary-hover-color);
+  border-color: var(--primary-hover-color);
+  color: white;
+}
+
+.modal-footer .btn-secondary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: white;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: var(--secondary-hover-color);
+  border-color: var(--secondary-hover-color);
+  color: white;
+}
+
+.modal-footer .btn-danger {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  color: white;
+}
+
+.modal-footer .btn-danger:hover {
+  background-color: var(--danger-hover-color);
+  border-color: var(--danger-hover-color);
+  color: white;
+}
+
+/* Caption */
+.carousel-caption {
+  color: var(--text-color);
+  background: var(--background-color);
+}
+
+/* Indicators */
+.carousel-indicators .active {
+  background-color: var(--primary-color);
+}
+
+.carousel-indicators li {
+  background-color: var(--secondary-color);
+}
+
+/* Controls */
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  display: none;
+}
+
+
+.carousel-control-next::after, 
+.carousel-control-prev::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 20%;
+}
+
+.carousel-control-next::after {
+  border-left: none;
+  border-bottom: none;
+  transform: rotate(45deg);
+}
+
+.carousel-control-prev::before {
+  border-right: none;
+  border-top: none;
+  transform: rotate(45deg);
+}
+
+
+.carousel-control-prev:hover, 
+.carousel-control-next:hover {
+  color: var(--accent-hover-color);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: auto;
+  margin: 0 -18px;
+  color: var(--text-color);
+}
+
+.reverse-scroll {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: auto;
+}
+
+
+@media (max-width: 576px) {
+    .card-body {
+        padding: 0.5rem;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 0.75rem;
+    }
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 85vh; /* Take full viewport height */
+}
+
+.reverse-scroll {
+  flex-grow: 1; /* Allow this div to grow and take up available space */
+  overflow-y: auto; /* Add scrolling if content overflows */
+}
+
+.fixed-bottom {
+  flex-shrink: 0; /* Prevent this div from shrinking */
+}
+
+/* footer.bg-light {
+  background-color: var(--background-color) !important;
+}
+
+footer .text-center.p-3 {
+  background-color: var(--secondary-color) !important;
+}
+
+footer a.text-dark {
+  color: var(--text-color) !important;
+} */
+
+
+footer {
+  position: relative;
+  color: var(--text-color);
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+footer a {
+  color: var(--text-color);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.container {
+  flex: 1 0 auto; /* This will make sure that the container takes up all available space, pushing the footer down */
+}
+
+footer {
+  flex-shrink: 0; /* This will prevent the footer from shrinking */
+}
+
+.jumbotron {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+
+.jumbotron h1,
+.jumbotron h2,
+.jumbotron h3,
+.jumbotron h4,
+.jumbotron h5,
+.jumbotron h6 {
+  color: var(--primary-color) !important;
+}
+
+.jumbotron p {
+  color: var(--primary-color) !important;
+}
+
+.jumbotron a {
+  background-color: var(--accent-color) !important;
+  color: var(--background-color) !important;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.jumbotron a:hover,
+.jumbotron a:focus {
+  background-color: var(--accent-hover-color) !important;
+  color: var(--background-color) !important;
+}
